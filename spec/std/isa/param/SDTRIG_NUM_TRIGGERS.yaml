@@ -8,7 +8,7 @@ kind: parameter
 name: SDTRIG_NUM_TRIGGERS
 description: |
   The number of triggers implemented. Triggers are indexed by tselect from 0 to SDTRIG_NUM_TRIGGERS - 1.
-long_name: TODO
+long_name: Number of triggers implemented
 schema:
   type: integer
   minimum: 1
