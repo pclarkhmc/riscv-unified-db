@@ -8,7 +8,7 @@ kind: parameter
 name: SDTRIG_ICOUNT_SUPPORTED
 description: |
   Indicates which triggers support icount.
-long_name: TODO
+long_name: List of triggers that support icount
 schema:
   type: array
   items:
