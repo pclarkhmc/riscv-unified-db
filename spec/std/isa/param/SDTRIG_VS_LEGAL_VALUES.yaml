@@ -1,4 +1,4 @@
-# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# Copyright (C) 2026 Harvey Mudd College
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # yaml-language-server: $schema=../../../schemas/param_schema.json
@@ -21,8 +21,10 @@ schema:
   uniqueItems: true
 requirements:
   idl(): |
-    !implemented?(ExtensionName::H) -> !$array_includes?(SDTRIG_VS_LEGAL_VALUES, 1);
-  reason: 'Debug spec 1.0: "This bit is hard-wired to 0 if the hart does not support virtualization mode."'
+    -> $array_includes?(SDTRIG_VS_LEGAL_VALUES, 0);
+  reason: The reset value of the VS field is 0, so 0 must be a legal value.
 definedBy:
   extension:
-    name: Sdtrig
+    allOf:
+      - name: Sdtrig
+      - name: H

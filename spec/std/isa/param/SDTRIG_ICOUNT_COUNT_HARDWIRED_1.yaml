@@ -1,4 +1,4 @@
-# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# Copyright (C) 2026 Harvey Mudd College
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # yaml-language-server: $schema=../../../schemas/param_schema.json
@@ -14,5 +14,10 @@ long_name: icount.COUNT is hard-wired to 1
 schema:
   type: boolean
 definedBy:
-  extension:
-    name: Sdtrig
+  allOf:
+    - extension:
+        name: Sdtrig
+    - param:
+        name: SDTRIG_ICOUNT_SUPPORTED_TRIGGERS
+        includes: true
+        reason: Only relevant if at least one trigger supports icount.

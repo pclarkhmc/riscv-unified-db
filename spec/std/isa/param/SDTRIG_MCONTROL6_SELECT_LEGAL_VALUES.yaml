@@ -1,4 +1,4 @@
-# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# Copyright (C) 2026 Harvey Mudd College
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # yaml-language-server: $schema=../../../schemas/param_schema.json
@@ -19,6 +19,15 @@ schema:
   maxItems: 2
   minItems: 1
   uniqueItems: true
+requirements:
+  idl(): |
+    -> $array_includes?(SDTRIG_MCONTROL6_SELECT_LEGAL_VALUES, 0);
+  reason: The reset value of mcontrol6.select is 0, so 0 must be a legal value.
 definedBy:
-  extension:
-    name: Sdtrig
+  allOf:
+    - extension:
+        name: Sdtrig
+    - param:
+        name: SDTRIG_MCONTROL6_SUPPORTED_TRIGGERS
+        includes: true
+        reason: Only relevant if at least one trigger supports mcontrol6.
