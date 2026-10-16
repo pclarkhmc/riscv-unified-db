@@ -11,6 +11,8 @@ kind: csr
 name: mhpmcounter20h
 long_name: Machine Hardware Performance Counter 20, Upper half
 address: 0xB94
+indirect_address: 0x54
+indirect_slot: 4
 writable: true
 priv_mode: M
 length: 32
@@ -74,7 +76,7 @@ definedBy:
 fields:
   COUNT:
     location: 31-0
-    alias: mhpmcounter.COUNT20[63:32]
+    alias: mhpmcounter20.COUNT[63:32]
     description: |
       Upper bits of counter.
     type(): |

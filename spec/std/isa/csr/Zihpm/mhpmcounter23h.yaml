@@ -11,6 +11,8 @@ kind: csr
 name: mhpmcounter23h
 long_name: Machine Hardware Performance Counter 23, Upper half
 address: 0xB97
+indirect_address: 0x57
+indirect_slot: 4
 writable: true
 priv_mode: M
 length: 32
@@ -74,7 +76,7 @@ definedBy:
 fields:
   COUNT:
     location: 31-0
-    alias: mhpmcounter.COUNT23[63:32]
+    alias: mhpmcounter23.COUNT[63:32]
     description: |
       Upper bits of counter.
     type(): |

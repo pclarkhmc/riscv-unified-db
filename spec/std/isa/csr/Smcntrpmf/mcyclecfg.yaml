@@ -7,6 +7,8 @@ kind: csr
 name: mcyclecfg
 long_name: Machine Cycle Counter Configuration
 address: 0x321
+indirect_address: 0x40
+indirect_slot: 2
 writable: true
 priv_mode: M
 length: 64
@@ -48,7 +50,7 @@ fields:
       allOf:
         - xlen: 64
         - extension:
-            name: M
+            name: Sm
     description: If set, then counting of events in M-mode is inhibited.
     reset_value: UNDEFINED_LEGAL
 

@@ -9,6 +9,8 @@ kind: csr
 name: <%= "mhpmcounter#{hpm_num}h" %>
 long_name: Machine Hardware Performance Counter <%= hpm_num %>, Upper half
 address: <%= "0x" + (0xB80 + hpm_num).to_s(16).upcase %>
+indirect_address: <%= "0x" + (0x40 + hpm_num).to_s(16).upcase %>
+indirect_slot: 4
 writable: true
 priv_mode: M
 length: 32
@@ -72,7 +74,7 @@ definedBy:
 fields:
   COUNT:
     location: 31-0
-    alias: mhpmcounter.COUNT<%= hpm_num %>[63:32]
+    alias: mhpmcounter<%= hpm_num %>.COUNT[63:32]
     description: |
       Upper bits of counter.
     type(): |

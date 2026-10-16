@@ -18,12 +18,13 @@ description: |
 definedBy:
   extension:
     name: Q
-assembly: fd, xs1, imm
+assembly: fd, imm(xs1)
 encoding:
   match: "-----------------100-----0000111"
   variables:
     - name: imm
       location: 31-20
+      sign_extend: true
     - name: xs1
       location: 19-15
     - name: fd

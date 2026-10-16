@@ -11,6 +11,8 @@ kind: csr
 name: mhpmcounter28
 long_name: Machine Hardware Performance Counter 28
 address: 0xB1C
+indirect_address: 0x5C
+indirect_slot: 1
 writable: true
 priv_mode: M
 length: 64
@@ -84,14 +86,14 @@ fields:
         <%- if ext?(:Sscofpmf) -%>
         * `mhpmevent28.MINH` is set and the current privilege level is M
         <%- if ext?(:S) -%>
-        * `mhpmevent28.SINH` <%- if ext?(:Ssccfg) -%>or its alias `hpmevent28..SINH`<%- end -%> is set and the current privilege level is (H)S
+        * `mhpmevent28.SINH` <%- if ext?(:Ssccfg) -%>or its alias `hpmevent28.SINH`<%- end -%> is set and the current privilege level is (H)S
         <%- end -%>
         <%- if ext?(:U) -%>
-        * `mhpmevent28.UINH` <%- if ext?(:Ssccfg) -%>or its alias `hpmevent28.SINH`<%- end -%> is set and the current privilege level is U
+        * `mhpmevent28.UINH` <%- if ext?(:Ssccfg) -%>or its alias `hpmevent28.UINH`<%- end -%> is set and the current privilege level is U
         <%- end -%>
         <%- if ext?(:H) -%>
-        * `mhpmevent28.VSINH` <%- if ext?(:Ssccfg) -%>or its alias `hpmevent28.SINH`<%- end -%> is set and the current privilege level is VS
-        * `mhpmevent28.VUINH` <%- if ext?(:Ssccfg) -%>or its alias `hpmevent28.SINH`<%- end -%> is set and the current privilege level is VU
+        * `mhpmevent28.VSINH` <%- if ext?(:Ssccfg) -%>or its alias `hpmevent28.VSINH`<%- end -%> is set and the current privilege level is VS
+        * `mhpmevent28.VUINH` <%- if ext?(:Ssccfg) -%>or its alias `hpmevent28.VUINH`<%- end -%> is set and the current privilege level is VU
         <%- end -%>
         <%- end -%>
       --
