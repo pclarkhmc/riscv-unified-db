@@ -5,24 +5,13 @@
 
 $schema: param_schema.json#
 kind: parameter
-name: SDTRIG_MCONTROL6_LOAD_LEGAL_VALUES
+name: SDTRIG_MCONTROL6_SELECT_WRITABLE
 description: |
-  The set of values that mcontrol6.LOAD supports.
-long_name: Legal values of mcontrol6.LOAD
+  If true, mcontrol6.SELECT can be set to 1, so mcontrol6 triggers can match on data (select=1) as well as address.
+  If false, mcontrol6.SELECT is read-only 0. Since mcontrol6.SELECT resets to 0, 0 is always supported.
+long_name: mcontrol6.SELECT is writable
 schema:
-  type: array
-  items:
-    type: integer
-    enum:
-      - 0
-      - 1
-  maxItems: 2
-  minItems: 1
-  uniqueItems: true
-requirements:
-  idl(): |
-    -> $array_includes?(SDTRIG_MCONTROL6_LOAD_LEGAL_VALUES, 0);
-  reason: The reset value of mcontrol6.load is 0, so 0 must be a legal value.
+  type: boolean
 definedBy:
   allOf:
     - extension:
