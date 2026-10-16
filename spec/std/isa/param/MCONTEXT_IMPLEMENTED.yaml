@@ -5,10 +5,10 @@
 
 $schema: param_schema.json#
 kind: parameter
-name: TCONTROL_AVAILABLE
+name: MCONTEXT_IMPLEMENTED
 description: |
-  Specifies if TCONTROL is available
-long_name: tcontrol CSR is implemented
+  Specifies if the mcontext CSR is implemented
+long_name: mcontext CSR is implemented
 schema:
   type: boolean
 definedBy:
